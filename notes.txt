@@ -1,0 +1,206 @@
+https://theasciicode.com.ar/
+#fullname   username   password    password_strength   incorrect_commands permission expiration_date
+
+
+user
+    name
+    username
+    password
+    password_power
+        lowercase: 2
+        uppercase: 4
+        number: 3
+        punctuation: 8
+        space: 1
+
+        if > 100
+            return 100
+    expire_date
+    permission:
+        0: user
+        1: admin
+    incorrect_commands: 
+    group_name
+
+    actions
+        login
+            if user & pass matchs
+
+                if date >= expire_date
+                    cannot login
+                else 
+                    login
+        logout
+        save data
+
+    each_times
+        USERNAME: 
+
+        su
+            if permission = 1
+                do
+            else 
+                login(user, pass)
+
+        passwd
+            if arg_user == user || arg_user == null
+                do
+            else
+                if permission == 1
+                    if l arg exists
+                        change expire_date
+                    else
+                        if power > 33
+                            change password
+                        else alert
+                else
+                    503
+
+        createuser
+            if power > 33
+                new user
+            else alert
+
+        chgr username
+            if permission = 0 &&
+                password_power > 75 && 
+                incorrect_commands <= 10
+                permission = 1
+
+        
+
+
+        file & dir
+            name
+            user
+            last_access
+            group
+            
+        createfile
+            name
+            usergroup
+
+
+        cd {}
+            if exits
+                ..
+                relative
+                absolute
+
+
+        pwd
+        
+        mkdir {}
+            if not exists
+
+        {pre} > {post}
+            if {post} not exists
+                create file {post}
+
+            if {pre} is not file
+                save {pre} to {post}
+            else
+                save contents of {pre} to file
+
+        {pre} >> {post}
+            if {post} not exists
+                create file {post}
+
+            if {pre} is not file
+                append {pre} to {post}
+            else
+                append contents of {pre} to file
+
+        cat {file_name}
+            show contents of {file_name}
+
+        rm {name}
+            if {name} not exists
+                alert & die
+
+            if {name} is directory
+                if -r arg exists
+                    remove {name}
+                else 
+                    alert
+            else 
+                remove {name}
+
+        cp {first} {second}
+            if / in first
+            if / in first
+            else
+                append PATH/ begin of name
+
+            copy first on second
+
+        ls
+            show files and dirs
+
+            -a
+                hidden files
+
+        ‫‪exif‬‬ {filename}
+            for each file or dir
+                show information of file
+                    user
+                    created_at
+                    updated_at
+                    path
+
+
+        wc {filename}
+            character count
+            word count
+            line count
+
+
+        ‫‪diff‬‬ {f1} {f2}
+            comparision between 2 files
+
+
+        ‫‪myeditor‬‬ {file}
+            line_length = 25
+            array = split {file} by line_length
+
+
+            if {file} is null
+                open
+
+            if {file} is exists
+                open {file}
+                save to {file}
+
+            else
+                open 
+                save to {file}
+
+
+            commands
+                ‫‪CTRL+R‬‬: get file name
+                CTRL+S: save
+                CTRL+E: exit
+                    if not save
+                        save
+                    exit
+                CTRL+S: search
+
+            message bar
+            help bar
+
+
+        find {name}
+            search for {name}
+
+        help {command}
+            if {command} is null
+                list of commands
+            else 
+                help of command
+
+        root
+        root/users/{name}
+        root/users/users.txt
+
+main
+    wait for login

@@ -1,0 +1,5 @@
+firstuser|manager|root|4|0|1|2050212
+seconduser|user1|pass1|20|0|0|2020510
+thirduser|user2|pass2|20|0|0|2022814
+forthuser|banned|pass|19|0|0|2018212
+fifthuser|amirmokh|Amirfarnoush803|33|0|0|2090824
